@@ -18,10 +18,11 @@ sed -i '/fedoraproject/a bind-address=10.2.5.10' /etc/my.cnf
 systemctl start mariadb
 systemctl enable mariadb
 
-mysql_secure_installation <<EOF
+mysql_secure_installation << EOF
 
-rootpassword
 Y
+rootpassword
+rootpassword
 Y
 Y
 Y
@@ -33,6 +34,7 @@ systemctl restart mariadb
 firewall-cmd --permanent --add-service=mysql
 systemctl restart firewalld
 
-
+# now test locally by trying to establish a mysql session by running:
+# mysql -u root -p
 
 exit 0
