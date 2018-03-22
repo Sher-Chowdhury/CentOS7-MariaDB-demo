@@ -22,7 +22,7 @@ Vagrant.configure(2) do |config|
     mariadb_server.vm.box = "bento/centos-7.4"
     mariadb_server.vm.hostname = "mariadb-server.example.com"
     # https://www.vagrantup.com/docs/virtualbox/networking.html
-    mariadb_server.vm.network "private_network", ip: "10.2.4.10", :netmask => "255.255.255.0", virtualbox__intnet: "intnet2"
+    mariadb_server.vm.network "private_network", ip: "10.2.5.10", :netmask => "255.255.255.0", virtualbox__intnet: "intnet2"
 
     mariadb_server.vm.provider "virtualbox" do |vb|
       vb.gui = true
@@ -40,7 +40,7 @@ Vagrant.configure(2) do |config|
   config.vm.define "mariadb_client" do |mariadb_client|
     mariadb_client.vm.box = "bento/centos-7.4"
     mariadb_client.vm.hostname = "mariadb-client.example.com"
-    mariadb_client.vm.network "private_network", ip: "10.2.4.12", :netmask => "255.255.255.0", virtualbox__intnet: "intnet2"
+    mariadb_client.vm.network "private_network", ip: "10.2.5.12", :netmask => "255.255.255.0", virtualbox__intnet: "intnet2"
 
     mariadb_client.vm.provider "virtualbox" do |vb|
       vb.gui = true
@@ -54,8 +54,8 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.provision :hosts do |provisioner|
-    provisioner.add_host '10.2.4.10', ['mariadb-server.example.com']
-    provisioner.add_host '10.2.4.11', ['mariadb-client.example.com']
+    provisioner.add_host '10.2.5.10', ['mariadb-server.example.com']
+    provisioner.add_host '10.2.5.11', ['mariadb-client.example.com']
   end
 
 end
