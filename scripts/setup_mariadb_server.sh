@@ -37,4 +37,16 @@ systemctl restart firewalld
 # now test locally by trying to establish a mysql session by running:
 # mysql -u root -p
 
+
+# this is to give the client access. 
+mysql -u root -prootpassword << EOF
+GRANT ALL on *.* TO root@'10.2.5.12' IDENTIFIED BY 'rootpassword';
+FLUSH PRIVILEGES;
+quit
+EOF
+
+
+
+
+
 exit 0
