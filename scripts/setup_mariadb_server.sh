@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# exit 0
 set -ex
 
 echo '##########################################################################'
@@ -44,9 +44,5 @@ GRANT ALL on *.* TO root@'10.2.5.12' IDENTIFIED BY 'rootpassword';
 FLUSH PRIVILEGES;
 quit
 EOF
-
-
-
-
 
 exit 0
