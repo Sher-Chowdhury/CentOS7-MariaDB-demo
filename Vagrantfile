@@ -55,7 +55,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.provision :hosts do |provisioner|
     provisioner.add_host '10.2.5.10', ['mariadb-server.example.com']
-    provisioner.add_host '10.2.5.11', ['mariadb-client.example.com']
+    provisioner.add_host '10.2.5.12', ['mariadb-client.example.com']
   end
 
 end
