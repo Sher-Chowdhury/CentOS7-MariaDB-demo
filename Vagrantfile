@@ -19,7 +19,7 @@ end
 
 Vagrant.configure(2) do |config|
   config.vm.define "mariadb_server" do |mariadb_server|
-    mariadb_server.vm.box = "bento/centos-7.4"
+    mariadb_server.vm.box = "bento/centos-7.5"
     mariadb_server.vm.hostname = "mariadb-server.example.com"
     # https://www.vagrantup.com/docs/virtualbox/networking.html
     mariadb_server.vm.network "private_network", ip: "10.2.5.10", :netmask => "255.255.255.0", virtualbox__intnet: "intnet2"
@@ -38,7 +38,7 @@ Vagrant.configure(2) do |config|
 
 
   config.vm.define "mariadb_client" do |mariadb_client|
-    mariadb_client.vm.box = "bento/centos-7.4"
+    mariadb_client.vm.box = "bento/centos-7.5"
     mariadb_client.vm.hostname = "mariadb-client.example.com"
     mariadb_client.vm.network "private_network", ip: "10.2.5.12", :netmask => "255.255.255.0", virtualbox__intnet: "intnet2"
 
